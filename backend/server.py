@@ -26,7 +26,7 @@ def upload_file():
 
     # 画像をサーバーに保存
     image.save(os.path.join(save_dir, image.filename))
-    # 保存されているか確認用
+    # 保存されているか確認用    
     res = createSummary(image.filename)
     response = {'result': res}
     return make_response(jsonify(response))
@@ -35,4 +35,5 @@ def upload_file():
 
 if __name__ == "__main__":
     app.debug = True
-    app.run()
+    # app.run()
+    app.run(host='100.64.1.20', port=8080)
